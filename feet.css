@@ -1,0 +1,152 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    background-image: url(b.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header styling */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8864df;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #8864df;
+}
+
+.btn {
+    background-color: #8864df;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6f4baf;
+}
+
+/* Feed section styling */
+.feed {
+    padding: 100px 20px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feed-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 3rem;
+}
+
+.feed-container h2 {
+    text-align: center;
+    color: #8864df;
+    margin-bottom: 20px;
+}
+
+.task {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.task p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.accept {
+    background-color: #28a745;
+}
+
+.accept:hover {
+    background-color: #218838;
+}
+
+/* Footer styling */
+footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #8864df;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #6f4baf;
+}

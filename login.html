@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: linear-gradient(130deg,#8864df 50%,#e598bd) ;
+            display: flex;
+        }
+        
+        /* larger screen style */
+        @media screen and (min-width: 1000px){
+            body{
+                display: flex;
+                gap: 1px;
+                justify-content: center;
+                height: 97vh;
+            }
+            .login_box{
+                height: 60%;
+                width: 80%;
+                max-width: 1500px;
+                min-width: 1000px;
+                max-height: 600px;
+                min-height: 350px;
+                position: relative;
+                top: 12%;
+                box-shadow: 0px 0px 20px #2b255e,-0px -0px 0px #2b255e;
+                display: grid;
+                gap: 2px;
+                grid-template-columns: repeat(5,1fr);
+                grid-template-rows: repeat(7,1fr);
+            }
+            #info{
+                background-image: url("./imageThis.jpg");
+                background-position: center;
+                grid-row: 1/8;
+                grid-column: 1/4;
+            }
+            .otp_p{
+                display: flex;
+                gap: 2px;
+                flex-direction: column;
+                grid-row: 1/8;
+                grid-column: 4/6;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+            
+            }
+            .otp_p *{
+                opacity: 100%;
+            }
+            .otp_p p{
+                margin: 0px;
+                font-family: "zain";
+                color: #8864df;
+                font-size: 24px;
+            }
+            #login_info{
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                grid-row: 1/8;
+                grid-column: 4/6;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+            
+            }
+            
+            
+            h1{
+                font-family: "Zain";
+                color: #8864df;
+                position: relative;
+                top: -10px;
+            }
+            svg{
+                position: relative;
+                left: 5px;
+                color: #8864df;
+            }
+            input{
+                background-color: #ededf8;
+                border: 0px;
+                width: 200px;
+                font-size: 20px;
+                color: gray;
+            }
+
+
+            .user_detail{
+                display: flex;
+                gap: 10px;
+    
+                width: 250px;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid;
+                background-color: #ededf8;
+                border-radius: 20px;
+                position: relative;
+                top: -10px;
+            }
+            span{
+                position: relative;
+                left: 8px;
+                font-weight: bold;
+            }
+            input:focus{
+                outline: none;
+            }
+            .button{
+                height: 30px;
+                width: 120px;
+                background: linear-gradient(130deg,#e598bd 30%,#8864df);
+                border-radius: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                cursor: pointer;
+                user-select: none;
+            }
+            .button p{
+                font-family: "Zain";
+                font-weight: 700;
+                font-size: 20px;
+                color: white;
+                margin: 0px;
+                padding: 0px;
+                height: 25px;
+
+            }
+            .button_unactive{
+                display: none;
+            }
+            .animation_circle{
+                height: 20px;
+                width: 20px;
+                border: 2px solid black;
+                border-radius: 50%;
+                filter: blur(1px);
+            }
+            .animation_circle_frame1{
+                border-width: 0px 0px 2px 0px;
+            }
+            .animation_circle_frame2{
+                border-width: 0px 0px 0px 2px;
+            }
+            .animation_circle_frame3{
+                border-width: 2px 0px 0px 0px;
+            }
+            .animation_circle_frame4{
+                border-width: 0px 2px 0px 0px;
+            }
+            .Warning_Box{
+                position: absolute;
+                height: 300px; /* 300px */ 
+                width: 500px; /* 500px */
+                border: 2px solid darkgrey;
+                z-index: 10;
+                top: 23vh;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0px;
+                font-family: "Zain";
+                font-size: 18px;
+                color: #8864df;
+            }
+            .Warning_Box h2{
+                margin: 0px;
+                padding: 0px;
+                color: darkred;
+            }
+            .Warning_Box button{
+                width: 60px;
+                height: 25px;
+                margin-bottom: 10px;
+            }
+            .hide{
+                display: none;
+            }
+            .timer{
+                display: inline-block;
+                height: 15px;
+                width: 40px;
+                position: relative;
+                top: 1.5px;
+                left: 3px;
+                font-size: 13px;
+            }
+            .register{
+                position: absolute;
+                bottom: 5px;
+                margin-left: 5px;
+                color: #8864df;
+                font-family: "zain";
+                font-size: 16px;
+                cursor: pointer;
+                user-select: none;
+            }
+            #reg{
+                grid-row: 1/8;
+                grid-column: 1/6;
+                background-color: white;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-family: "zain";
+                flex-direction: column;
+                gap: 5px;
+            }
+            #reg > div{
+                display: flex;
+                justify-content: space-between;
+                width: 310px;
+                position: relative;
+                top: -40px;
+            }
+            #reg > h2{
+                position: relative;
+                top: -38px;
+                left: 15px;
+                font-family: "zain";
+                font-size: 30px;
+                margin-bottom:3px ;
+                color:#2b255e;
+            }
+            #regOTP{
+                grid-row: 1/8;
+                grid-column: 1/6;
+                background-color: white;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-family: "zain";
+                flex-direction: column;
+                gap: 5px;
+            }
+            #regOTP > *{
+                opacity: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Warning_Box hide">
+        <h2 style="display: block;">"USER NOT FOUND"</h2>
+        <p>Want to register??</p>
+        <button style="display: inline;">yes</button>
+        <button>no</button>
+    </div>
+    <div class="login_box">
+        <div id="info"></div>
+        <div class="otp_p hide">
+            <div style="width: 200px; height: 30px;">
+                <p>Enter OTP</p>
+            </div>
+            <input type="text" style="width: 200px;">
+            <div style="width: 200px; height: 30px; margin-top: 15px;">
+                <button>submit</button>
+                <button class="resend">resend</button>
+                <span class="timer">00:30</span>
+            </div>
+            <div style="width: 100px; height: 30px;">
+                <p class="mismatchOtp hide" style="color: red; font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 0px;">Incorrect OTP</p>
+            </div>
+        </div>
+        <div id="reg" class='hide'>
+            <h2>Creating an account</h2>
+            <div id="rName">Name <input type="text" style="position: relative; left: -18px;"> </div>
+            <div id="rEmail">Email <input type="email" style="position: relative; left: -18px;"></div>
+            <div id="rP">Password <div><input type="password" id="p1"> <img  class="show" src="./eye-slash-fill.svg" alt="logo"></div> </div>
+            <div>Confirm Pass <div><input type="password" id="p2"> <img class="show" src="./eye-slash-fill.svg" alt="logo"></div> </div>
+            <div style="display: flex; justify-content: center; position: relative; left: 30px;top: -30px;"><button>submit</button> </div>
+            <div style="top: -30px;color: red; opacity: 0%;;" id="misPass"> mismatched password, Try again</div>
+            <div style="top: -30px;color: red; opacity: 0%;;" id="misName"> length of name must be greater than 2</div>
+            <div style="top: -30px;color: red; opacity: 0%;;" id="misPassLen"> Password length must be greater than 6</div>
+        </div>
+        <div id="regOTP">
+            <div style="width: 200px; height: 30px;">
+                <p>Enter OTP</p>
+            </div>
+            <input type="text" style="width: 200px;">
+            <div style="width: 200px; height: 30px; margin-top: 15px;">
+                <button>submit</button>
+                <button class="resend">resend</button>
+                <span class="Regtimer">00:30</span>
+            </div>
+            <div style="width: 100px; height: 30px;">
+                <p class="mismatchOtp hide" style="color: red; font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 0px;">Incorrect OTP</p>
+            </div>
+        </div>
+        <div id="login_info">
+            <h1>USER LOGIN</h1>
+            <div class="user_detail" style="height: 28px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+                
+                <input type="email" value = "Email" id="username" name="username">
+            </div>
+            <div class="user_detail" id="pass" style="height: 28px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                </svg>
+                
+                <input type="text" value="Password"  name="password" id="password" style="position: relative">
+            </div>
+            <!-- pin less -->
+            <div class="pin" style="display: flex; gap: 5px; justify-content: center; align-items: center;position: relative;;top: -10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                </svg>
+                
+                <span>PIN less authentication</span>
+                
+            </div>
+            <!-- login buuton -->
+             <div class="wrapper" style="height: 40px; width: 120px; display: flex;justify-content: center; align-items: center;">
+
+                 <div class="button">
+                     <p class="">LOGIN</p>
+                     <div class="animation_circle animation_circle_frame1 button_unactive"></div>
+                    </div>
+            </div>
+            <p class="register">Create new Account</p>
+        </div>
+    </div>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</body>
+<script src="./login_animations.js" charset="UTF-8"></script>
+</html>

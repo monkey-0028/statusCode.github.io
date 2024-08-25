@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select Tag</title>
+    <style>
+        body{
+            display: grid;
+            width: 100%;
+            height: 100vh;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(20,1fr);
+        }
+        #welMessage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: 1/6;
+            grid-row: 1/2;
+            font-size: 20px;
+            font-family: "zain";
+            font-weight: 600;
+            color: #8864df;
+        }
+        #Cname{
+            display: flex;
+            grid-column:1/6 ;
+            grid-row: 2/3;
+            justify-content: center;
+            align-items: center;
+            font-family: "zain";
+            font-size: 25px;
+            color: #2b255e;
+        }
+        #mainBox{
+            display: flex;
+            flex-direction: column;
+            grid-column: 1/6;
+            grid-row: 4/15;
+            background-color: lightslategray;
+            align-items: center;
+            gap: 20px;
+        }
+        #mainBox > div{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 20px;
+            width: 400px;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            border-radius: 30px;
+            border: 0px solid black;   
+        }
+        .greyy{
+            background-color: grey;
+        }
+        #message{
+            display: flex;
+            grid-column: 1/6;
+            grid-row: 3/4;
+            justify-content: center;
+            align-items: center;
+            font-family: "zain";
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="welMessage">Welcome to</div>
+    <div id="Cname">ChoreConnect </div>
+    <div id="message">Please, select your interest.</div>
+    <div id="mainBox">
+        <div><button>Household</button><button>Errand</button></div>
+        <div><button>Pet Care</button><button>Child Care</button></div>
+        <div><button>Home-maintenance</button><button>Personal-assistance</button></div>
+        <div><button>Tutoring</button><button>Transportation</button></div>
+        <div><button>Event Assistance</button><button>Miscellaneous</button></div>
+        <div style="justify-content:center;"><button id="submit">Submit</button></div>
+
+    </div>
+    
+
+</body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script>
+var user;
+var userData;
+
+function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+async function fetchUsers(email) {
+    try {
+        const response = await fetch(`https://statuscodebackend.onrender.com/users`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        userData = await response.json();
+        user = userData.find(item => item.email === email)
+    } catch (error) {
+        console.error('Error fetching users:', error);
+    }
+}
+
+// Get the encoded JSON string from the query parameter
+const userParam = getQueryParam('user');
+
+if (userParam) {
+    // Decode and parse the JSON string back into an object
+    user = JSON.parse(decodeURIComponent(userParam));
+} else {
+    console.log('User parameter not found');
+}
+    // Function to update an existing user
+    async function updateUser(userEmail,passw,namee,ojob,ajob,gjob,utags,urating,uacAge) {
+    const updatedUser = {
+        password: passw,
+        name: namee,
+        ownedJobId: ojob,
+        appliedJobId: ajob,
+        jobGivenId: gjob,
+        tags: utags,
+        rating: urating,
+        acAge: uacAge
+    };
+    const response = await fetch(`https://statuscodebackend.onrender.com/users/${userEmail}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedUser)
+    });
+    const result = await response.text();
+    console.log(result);
+    fetchUsers(userEmail)
+    alert("change success")
+}
+    var allButton = document.querySelectorAll("button")
+    var tagList = []
+    for(var item=0;item<allButton.length-1;item++){
+        allButton[item].addEventListener("mouseenter",function(){
+            this.style.color = 'red'
+        })
+    }
+    for(var item=0;item<allButton.length-1;item++){
+        allButton[item].addEventListener("mouseleave",function(){
+            this.style.color = 'black'
+        })
+    }
+    for(var item=0;item<allButton.length-1;item++){
+        allButton[item].addEventListener("click",function(){
+            this.classList.toggle('greyy')
+            if(this.classList[0] == 'greyy'){
+                tagList.push(this.textContent)
+            }
+            else{
+                tagList = tagList.filter(fruit => fruit !== this.textContent);
+            }
+        })
+    }
+
+    document.querySelector("#submit").addEventListener("click",function(){
+        var maill = user.email
+        this.classList.add('greyy')
+        setTimeout(()=>{this.classList.remove('greyy')},80)
+        updateUser(user.email,user.password,user.name,[],[],[],tagList,5,"new")
+
+        window.location.href = "./feed.html?user=" + encodeURIComponent(JSON.stringify(user));
+    })
+
+</script>
+
+</html>

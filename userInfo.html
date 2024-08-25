@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User INFO</title>
+</head>
+<body>
+    <div class="uf"></div>
+</body>
+<script>
+     function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+// Get the encoded JSON string from the query parameter
+const userParam = getQueryParam('user');
+
+if (userParam) {
+    // Decode and parse the JSON string back into an object
+    const userObject = JSON.parse(decodeURIComponent(userParam));
+    document.querySelector("div").innerHTML = `${userObject.name}(${userObject.email})`
+} else {
+    console.log('User parameter not found');
+}
+</script>
+</html>
