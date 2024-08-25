@@ -121,13 +121,15 @@ async function updateUser(userEmail,passw,namee,ojob,ajob,gjob,utags,urating,uac
 }
 
 // Add job data
-async function addJob(jobID, ownerEmail, tags, appliedUsers) {
+async function addJob(jobID, ownerEmail, tags, appliedUsers,title,des) {
     // Prepare the job data
     const jobData = {
         jobID: parseInt(jobID),   // Convert jobID to an integer
         ownerEmail: ownerEmail,
         tags: tags,
-        appliedUsers: appliedUsers
+        appliedUsers: appliedUsers,
+        title: title,
+        des: des
     };
 
     // Try to send the data to the backend
@@ -157,13 +159,15 @@ async function addJob(jobID, ownerEmail, tags, appliedUsers) {
 }
 
 // updating job
-async function updateJob(jobID, ownerEmail, tags, appliedUsers) {
+async function updateJob(jobID, ownerEmail, tags, appliedUsers,title,des) {
     // Prepare the updated job data
     const jobData = {
         jobID: parseInt(jobID),   // Convert jobID to an integer
         ownerEmail: ownerEmail,
         tags: tags,
-        appliedUsers: appliedUsers
+        appliedUsers: appliedUsers,
+        title: title,
+        des: des
     };
 
     // Try to send the data to the backend

@@ -11,43 +11,17 @@
         <nav>
             <div class="logo">ChoreConnect</div>
             <ul>
-                <li><a href="#home">Profile</a></li>
+                <li><a id="profile" href="#home"></a></li>
                 <li><a href="#profile">YourJob</a></li>
                 <li><a href="#messages">JobApplied</a></li>
-                <li><a href="#messages">About</a></li>
+                <li><a href="./about.html">About</a></li>
                 <li><a href="#logout" class="btn">Logout</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="feed">
-        <div class="feed-container">
 
-            <div class="task">
-                <h3>Task Title: Lawn Mowing</h3>
-                <p>Description: Need someone to mow my lawn this weekend. Must have your own equipment.</p>
-                <p>Category: Household Chores</p>
-                <p>Posted by: User123</p>
-                <div class="task-actions">
-                    <button class="btn">View Details</button>
-                    <button class="btn accept">Accept Task</button>
-                </div>
-            </div>
-        </div>
-        <div class="feed-container">
-            <div class="task">
-                <h3>Task Title: Grocery Shopping</h3>
-                <p>Description: Looking for someone to pick up groceries from the local supermarket.</p>
-                <p>Category: Errands</p>
-                <p>Posted by: User456</p>
-                <div class="task-actions">
-                    <button class="btn">View Details</button>
-                    <button class="btn accept">Accept Task</button>
-                </div>
-            </div>
-        </div>
-            <!-- Additional tasks can be added here -->
-        </div>
     </section>
 
     <footer>
@@ -55,4 +29,81 @@
         <a href="mailto:info@choreconnect.com">Contact Us</a>
     </footer>
 </body>
+<script>
+    var user;
+    var template = '<div class="feed-container"><div class="task"><h3>Task Title: Lawn Mowing</h3><p>Description: Need someone to mow my lawn this weekend. Must have your own equipment.</p><p>Category: Household Chores</p><p>Posted by: User123</p><div class="task-actions"><button class="btn">View Details</button><button class="btn accept">Accept Task</button></div></div</div>'
+    function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+    }
+    const userParam = getQueryParam('user');
+
+if (userParam) {
+    // Decode and parse the JSON string back into an object
+    user = JSON.parse(decodeURIComponent(userParam));
+} else {
+    console.log('User parameter not found');
+}
+//
+document.querySelector("#profile").textContent = user.name
+// suggesting feeds.... 
+var jobData;
+async function fetchJobs() {
+    try {
+        const response = await fetch(`https://statuscodebackend.onrender.com/jobs`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        jobData = await response.json();
+    } catch (error) {
+        console.error('Error fetching users:', error);
+    }
+}
+fetchJobs()
+var trackedJob = []
+setTimeout(()=>{
+    var userTags = user.tags
+    for(var item=0;item<userTags.length;item++){
+        const filteredData = jobData.filter(items => 
+            Array.isArray(items.tags) && items.tags.includes(userTags[item])
+        );
+        for(var i=0;i<filteredData.length;i++){
+            if(filteredData[i].ownerEmail != user.email && !trackedJob.includes(filteredData[i])){
+                trackedJob.push(filteredData[i])
+            }
+        }
+    }
+    console.log(trackedJob)
+
+    var m = document.querySelector("section")
+for(var i=0;i<trackedJob.length;i++){
+    m.innerHTML += template
+}
+var jj = document.querySelectorAll(".task")
+
+for(var ii=0;ii<jj.length;ii++){
+    jj[ii].querySelector("h3").textContent = "Task Title: " + trackedJob[ii].title
+    var alle = jj[ii].querySelectorAll("p")
+    alle[0].textContent = "Description: " + trackedJob[ii].des
+    var cat =""
+    for(var n=0;n<trackedJob[ii].tags.length;n++){
+        if(n == trackedJob[ii].tags.length-1){
+            cat += trackedJob[ii].tags[n]
+        }
+        else{
+            cat += trackedJob[ii].tags[n] + ","
+        }
+    }
+    alle[1].textContent = "Category: " + cat
+    alle[2].textContent = "Posted By: " + trackedJob[ii].ownerEmail
+    console.log(trackedJob[ii])
+}
+
+},2000)
+
+
+
+
+
+</script>
 </html>
