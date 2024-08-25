@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChoreConnect - User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <header class="profile-header">
+            <div class="profile-pic-container">
+                <img src="ppp.png" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="profile-info">
+                <h1 class="username" contenteditable="false">USER NAME</h1>
+                <div class="rating" style="position: relative;left: 10px;" contenteditable="true">★★★★☆</div>
+                <p class="location" style="position: relative; left: 10px;" contenteditable="false"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                  </svg> Location: india, kolkata</p>
+                  <p class="tags location" style="position: relative; left: 15px;" contenteditable="false"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags-fill" viewBox="0 0 16 16">
+                    <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                    <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z"/>
+                  </svg> Tags</p>
+            </div>
+        </header>
+        <section class="bio">   
+        </section>
+        <section class="skills">
+            <h2>Skills & Expertise</h2>
+            <ul>
+                <li><img src="s.jpg" alt="Skill 1"> <span contenteditable="true">Skill 1</span></li>
+                <li><img src="s.jpg" alt="Skill 2"> <span contenteditable="true">Skill 2</span></li>
+                <li><img src="s.jpg" alt="Skill 3"> <span contenteditable="true">Skill 3</span></li>
+            </ul>
+        </section>
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="activity-item">
+                <p contenteditable="false">Task 1 - Completed</p>
+            </div>
+            <div class="activity-item">
+                <p contenteditable="false">Task 2 - Completed</p>
+            </div>
+        </section>
+        <section class="contact">
+            <h2>Contact</h2>
+            <div class="social-media">
+                <a href="https://instagram.com/username" target="_blank"><img src="instagram.png" alt="Twitter"></a>
+                <a href="https://linkedin.com/in/username" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+    var user;
+    
+    function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+    }
+    const userParam = getQueryParam('user');
+
+if (userParam) {
+    // Decode and parse the JSON string back into an object
+    user = JSON.parse(decodeURIComponent(userParam));
+} else {
+    console.log('User parameter not found');
+}
+document.querySelector(".username").textContent = user.name  
+function editProfile() {
+            alert("Profile editing is enabled.");
+        }
+
+        document.querySelector(".tags").addEventListener("click",function(){
+            window.location.href = "./tag_list.html?user=" + encodeURIComponent(JSON.stringify(user));
+        })
+
+        function inviteToTask() {
+            alert("Invite functionality.");
+        }
+    </script>
+</body>
+</html>

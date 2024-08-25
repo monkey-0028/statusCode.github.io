@@ -15,7 +15,7 @@
                 <li><a href="#profile">YourJob</a></li>
                 <li><a href="#messages">JobApplied</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="#logout" class="btn">Logout</a></li>
+                <li><a id="logout" class="btn">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -32,6 +32,7 @@
 <script>
     var user;
     var template = '<div class="feed-container"><div class="task"><h3>Task Title: Lawn Mowing</h3><p>Description: Need someone to mow my lawn this weekend. Must have your own equipment.</p><p>Category: Household Chores</p><p>Posted by: User123</p><div class="task-actions"><button class="btn">View Details</button><button class="btn accept">Accept Task</button></div></div</div>'
+   
     function getQueryParam(name) {
     const params = new URLSearchParams(window.location.search);
     return params.get(name);
@@ -44,6 +45,11 @@ if (userParam) {
 } else {
     console.log('User parameter not found');
 }
+//
+//
+document.querySelector("#profile").addEventListener("click",function(){
+    window.location.href = "./profile.html?user=" + encodeURIComponent(JSON.stringify(user));
+})
 //
 document.querySelector("#profile").textContent = user.name
 // suggesting feeds.... 
@@ -59,6 +65,10 @@ async function fetchJobs() {
         console.error('Error fetching users:', error);
     }
 }
+document.querySelector("#logout").addEventListener("click",function(){
+    window.location.href = "./index.html"
+})
+
 fetchJobs()
 var trackedJob = []
 setTimeout(()=>{
