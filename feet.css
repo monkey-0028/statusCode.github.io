@@ -123,6 +123,7 @@ ul li a:hover {
 
 .accept {
     background-color: #28a745;
+    width: 300px;
 }
 
 .accept:hover {

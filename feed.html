@@ -31,7 +31,7 @@
 </body>
 <script>
     var user;
-    var template = '<div class="feed-container"><div class="task"><h3>Task Title: Lawn Mowing</h3><p>Description: Need someone to mow my lawn this weekend. Must have your own equipment.</p><p>Category: Household Chores</p><p>Posted by: User123</p><div class="task-actions"><button class="btn">View Details</button><button class="btn accept">Accept Task</button></div></div</div>'
+    var template = '<div class="feed-container"><div class="task"><h3>Task Title: Lawn Mowing</h3><p>Description: Need someone to mow my lawn this weekend. Must have your own equipment.</p><p>Category: Household Chores</p><p>Posted by: User123</p><p>Price:</p><div class="task-actions"><button class="btn accept">Apply</button></div></div</div>'
    
     function getQueryParam(name) {
     const params = new URLSearchParams(window.location.search);
@@ -106,7 +106,16 @@ for(var ii=0;ii<jj.length;ii++){
     }
     alle[1].textContent = "Category: " + cat
     alle[2].textContent = "Posted By: " + trackedJob[ii].ownerEmail
+    alle[3].textContent = "Price: " + trackedJob[ii].price
     console.log(trackedJob[ii])
+}
+all_b = document.querySelectorAll(".btn")
+var all_applied = user.appliedJobId
+for(var ib=0;ib<all_b.length;ib++){
+    all_b[ib].addEventListener("click",function(){
+        this.textContent = "Applied"
+        
+    })
 }
 
 },2000)
