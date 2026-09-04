@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            responsive web #3
+        </title>
+        <style>
+            /*mobile width : 250px to 550 px*/
+            body{
+                display: flex;
+                flex-direction: column;
+                margin: 15px;
+                gap: 12px;
+            }
+            h3,p{
+                margin: 0px;
+            }
+            .navCont>img{
+                height: 20px;
+                width: 20px;
+            }
+            .navCont{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: solid black 1px;
+                padding-bottom: 3px;
+            }
+            .navControlCont,.navCont>button{
+                display: none;
+            }
+            .heroCont{
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+                padding-left: 5px;
+                padding-right: 5px;
+                border-bottom: solid 1px black;
+                padding-bottom: 12px;
+            }
+            .heroTextCont{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 4px;
+            }
+            a{
+                text-decoration: none;
+                letter-spacing: 2px;
+            }
+            .heroImgCont{
+                width: 200px;
+                height: 200px;
+                border: 1px dotted grey;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card{
+                border: 1px dotted black;
+                border-radius: 10px;
+                width: clamp(180px,70%,250px);
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+            }
+            .card>img{
+                height: 20px;
+                width: 20px;
+            }
+
+            .featuresCont{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 5px;
+            }
+            .allCard{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 20px;
+                align-items: center;
+                width: 100%;
+            }
+
+            .footer{
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            @media(min-width: 551px){
+                .navControlCont,.navCont>button{
+                    display: flex;
+                    flex-direction: row;
+                    gap: clamp(1px,10vw,100px);
+                }
+                .navCont>img{
+                    display: none;
+                }
+                .heroCont{
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: normal;
+                }
+                .heroTextCont{
+                    align-items: start;
+                    padding-top: 20px;
+                    gap: 10px;
+                    text-align: left;
+                }
+                /*.allCard{
+                    flex-direction: row;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                }*/
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="navCont">
+            <h3>
+                LOGO
+            </h3>
+            
+            <img src="menu.svg">
+
+            <div class="navControlCont">
+                <span>
+                    Home
+                </span>
+                <span>
+                    Product
+                </span>
+                <span>
+                    About
+                </span>
+                <span>
+                    Contact
+                </span>
+            </div>
+
+            <button>
+                LOGIN
+            </button>
+            
+        </div>
+
+        <div class="heroCont">
+            <div class="heroTextCont">
+                 <h3>
+                     BIG HEADING
+                 </h3>
+                 <p>
+                     This is small discription box right here and nothing else.
+                 </p>
+                 <a href=""> [ Get started ]</a>
+            </div>
+
+            <div class="heroImgCont">
+                <img src="" alt="heroImg">
+            </div>
+        </div>
+
+        <div class="featuresCont">
+            <h3>
+                Features
+            </h3>
+
+            <div class="allCard">
+                
+            <div class="card">
+                <img src="" alt="featureImg">
+                <h3>
+                    Feature 1
+                </h3>
+                <span>
+                    Keep your things safe and secure man.
+                </span>
+            </div>
+
+            <div class="card">
+                <img src="" alt="featureImg">
+                <h3>
+                    Feature 2
+                </h3>
+                <span>
+                    Keep your things safe and secure man.
+                </span>
+            </div>
+
+            <div class="card">
+                <img src="" alt="featureImg">
+                <h3>
+                    Feature 3
+                </h3>
+                <span>
+                    Keep your things safe and secure man.
+                </span>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="">
+                [ CALL TO ACTION ]
+            </a>
+        </div>
+
+
+    </body>
+</html>

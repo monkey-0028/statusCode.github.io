@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        web layout
+    </title>
+    <style>
+        h3{
+            margin: 0px;
+        }
+
+        body{
+            margin: 0px;
+            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px 10px 0px 10px;
+        }
+
+        .navBar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-left: 10px;
+            height: 35px;
+            border-bottom: 2px dotted black;
+        }
+        .navControl{
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+        }
+        .ContentCont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 70%;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 2px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .footerCont{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            align-items: center;
+        }
+        .mainCont{
+            /*border: 2px solid black;*/
+            width: 85%;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="navBar">
+        <h3>
+            Simple Web
+        </h3>
+        <div class="navControl">
+            <span>
+                Home
+            </span>
+            <span>
+                About
+            </span>
+            <span>
+                Contact
+            </span>
+        </div>
+    </div>
+
+    <div class="ContentCont">
+        <div class="list">
+            <span> Chapter 1</span>
+            <span> Chapter 2</span>
+            <span> Chapter 3</span>
+            <span> Chapter 4</span>
+            <span> Chapter 5</span>
+            <span> Chapter 6</span>
+            <span> Chapter 7</span>
+            <span> Chapter 8</span>
+        </div>
+
+        <div class="mainCont">
+            <p>
+                This is main content of this website. I think I have made a pretty well and reponsive
+                website layout by only using Flexbox. Still, I think I can make it better by
+                using things like max-width and max-height, because when i increase the size, 
+                The sepration between element increases, which will make my website look very odd 
+                in very large screens. But still, if ignoring super large display, My current layout
+                looks really nice for a regular or even large screens.
+            </p>
+            <p>
+                This is Second paragraph, I am trying to look how my website will look if i fill it
+                with a lot of texts and paragraphs. so far so good.
+            </p>
+        </div>
+    </div>
+
+    <div class="footerCont">
+        <span>
+            Copyrights
+        </span>
+        <span>
+            gmail : asdf@gmail.com
+        </span>
+        <span>
+            END
+        </span>
+    </div>
+</body>

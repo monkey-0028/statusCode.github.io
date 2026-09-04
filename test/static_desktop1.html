@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Full website 1
+        </title>
+        <style>
+            h2,h3{
+                margin: 0;
+            }
+            body{
+                font-family: sans-serif;
+                margin: 0;
+                background-color: snow
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            .top a{
+                color: whitesmoke
+            }
+            .top{
+                display: flex;
+                flex-direction: row;
+                color: whitesmoke;
+                background-color: black;
+                font-weight: 100;
+                font-size: 0.8em;
+                height: 30px;
+                align-items: center;
+                justify-content: right;
+                position: relative;
+                
+            }
+            .otherLinkCont{
+                padding-right: 40px;
+                display: flex;
+                flex-direction: row;
+                gap: 35px;
+            }
+            .topMessageCont{
+                position: absolute;
+                margin-right: 50%;
+                transform: translateX(50%);
+                max-width: 30%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .navIcons img{
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+            }
+            .navIcons button{
+                all:unset;
+            }
+            .navCont{
+                display: flex;
+                flex-direction: row;
+                height: 70px;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0px 40px;
+                position: relative;
+            }
+            .navControlCont{
+                
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                font-weight: 800;
+            }
+            .navIcons{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+            .heroCont{
+                box-sizing: border-box;
+                width: 100%;
+                background-image: url("../res/heroImg.png");
+                height: 450px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                justify-content: center;
+                padding-left: 15%;
+            }
+            .heroMessage{
+                text-transform: uppercase;
+                font-size: 0.8em;
+                font-weight: 500;
+            }
+            .heroCont h2{
+                text-transform: capitalize;
+                font-size: 3em;
+            }
+            .heroDesp{
+                max-width: 300px;
+            }
+            .heroLinkCont{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+            .heroLinkCont a{
+                border: 2px solid black;
+                width: 125px;
+                padding: 10px 0px;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 0.8em;
+            }
+            .diffStyleHeroLink{
+                background-color: black;
+                color: snow;
+            }
+            .featureCont{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                margin: 20px 100px;
+                
+            }
+            .card>img{
+                height: 40px;
+                width: 40px;
+            }
+            .card{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+                font-size: 0.8em;
+                height: 60px;
+            }
+            .card>div{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .bar{
+                
+                width: 2px;
+                height: 38px;
+                border-radius: 50px;
+                background-color: #EADFD9;
+            }
+            .sepBar{
+                height: 1px;
+                background-color: #EADFD9;
+            }
+            .categoryCont{
+                display: flex;
+                flex-direction: column;
+                margin: 20px 0px;
+                
+                align-items: center;
+                gap: 15px;
+            }
+            .categoryCont>h3{
+                text-transform: uppercase;
+            }
+            .categoryCardCont{
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                justify-content: center;
+            }
+            .categoryCard{
+                height: 150px;
+                width: 180px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: end;
+                padding-bottom: 20px;
+                text-transform: uppercase;
+                color: snow;
+
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .categoryCard>h4{
+                font-size: 1em;
+            }
+            .categoryCard>span{
+                font-size: 0.7em;
+            }
+            .cc1{
+                background-color: #A89A8A;
+                background-image: url("../res/e1menSection.png");
+            }
+            .cc2{
+                background-color: #b99e86;
+                background-image: url("../res/e2WomenSection.png");
+                background-position: -50px ;
+            }
+            .cc3{
+                background-color: #a59b91;
+                background-image: url("../res/e4Kid.png");
+            }
+            .cc4{
+                background-color: #bdb3a9;
+                background-image: url("../res/e3Footware.png");
+            }
+            .cc5{
+                background-color: #aaa198;
+                background-image: url("../res/e5Asscessory.png");
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="topMessageCont" title="Free Shipping on all order over $50 & 20% off on 
+            orders above $2000.">
+                <span>
+                    Free Shipping on all order over $50 & 20% off on 
+                    orders above $2000.
+                </span>
+            </div>
+            <div class="otherLinkCont">
+                <a href="/">Help</a>
+                <a href="/">Track Order</a>
+                <a href="/">Returns & Exchanges</a>
+            </div>
+        </div>
+
+        <div class="navCont">
+            <div class="navLogo">
+                <h2>
+                    URBANIC
+                </h2>
+            </div>
+            
+            <div class="navControlCont">
+                <a href="#">New Arrivals</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Collections</a>
+                <a href="#">Sale</a>
+            </div>
+
+            <div class="navIcons">
+                <button>
+                    <img src="../res/search.svg" alt="searchSVG">
+                </button>
+
+                <img src="../res/avatar-black.svg" alt="avatarImg">
+                <img src="../res/bag.svg" alt="cartSVG">
+
+                
+            </div>
+        </div>
+
+        <div class="heroCont">
+           <span class="heroMessage">
+               new collection
+           </span> 
+           <h2>
+               Style that <br>
+                Defines You
+           </h2>
+           <span class="heroDesp">
+               Discover trendsetting piece
+               crafted for comfort, quality 
+               and timeless style.
+           </span>
+
+           <div class="heroLinkCont">
+               <a class="diffStyleHeroLink" href="#">Shop Men</a>
+               <a href="#">Shop Women</a>
+           </div>
+        </div>
+
+        <div class="featureCont">
+                <div class="card">
+                    <img src="../res/shipping.svg" alt="shippingSVG">
+                    <div>
+                        <h3>
+                            Free Shipping
+                        </h3>
+                        <span>
+                            On orders over $50
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bar">
+                    
+                </div>
+
+                <div class="card">
+                    <img src="../res/return.svg" alt="returnSVG">
+                    <div>
+                        <h3>
+                            Easy Return
+                        </h3>
+                        <span>
+                            30 days return policy
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bar"></div>
+
+                <div class="card">
+                    <img src="../res/secure.svg" alt="secureSVG">
+                    <div>
+                        <h3>
+                            Secure Payment
+                        </h3>
+                        <span>
+                            100% secure checkout
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bar"></div>
+
+                <div class="card">
+                    <img src="../res/support.svg" alt="supportSVG">
+                    <div>
+                        <h3>
+                            24/7 Support
+                        </h3>
+                        <span>
+                            We're here to help
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="sepBar"></div>
+
+            <div class="categoryCont">
+                <h3>
+                    shop by category
+                </h3>
+                <div class="categoryCardCont">
+                    <div class="categoryCard cc1">
+                        <h4>
+                            Men
+                        </h4>
+                        <span>
+                            Explore Now
+                        </span>
+                    </div>
+
+                    <div class="categoryCard cc2">
+                        <h4>
+                            women
+                        </h4>
+                        <span>
+                            Explore Now
+                        </span>
+                    </div>
+
+                    <div class="categoryCard cc3">
+                        <h4>
+                            kids
+                        </h4>
+                        <span>
+                            Explore Now
+                        </span>
+                    </div>
+
+                    <div class="categoryCard cc4">
+                        <h4>
+                            footware
+                        </h4>
+                        <span>
+                            Explore Now
+                        </span>
+                    </div>
+
+                    <div class="categoryCard cc5">
+                        <h4>
+                            Accessories
+                        </h4>
+                        <span>
+                            Explore Now
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+    </body>
+</html>

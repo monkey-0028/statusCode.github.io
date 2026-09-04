@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Responsive web #2
+        </title>
+        <style>
+            /*mobile width : 300px to 450 px*/
+            h2{
+                margin: 0px;
+            }
+            img{
+                height: 90px;
+                width: 90px;
+                
+            }
+            .avatarCont{
+                display: flex;
+                flex-direction: column;
+                padding-top: 10px;
+                align-items: center;
+                gap: 10px;
+            }
+            .avatarCont span{
+                letter-spacing: 3px;
+            }
+            .namePlate{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .skillSet{
+                padding-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .card{
+                border: 2px dotted lightslategrey;
+                width: 20%;
+                min-width: 80px;
+                max-width: 100px;
+                height: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .profileLinkCont{
+                padding-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .profileLinkCont > a{
+                letter-spacing: 3px;
+                text-decoration: none;
+            }
+            @media (min-width: 451px){
+                .skillSet{
+                    justify-content: center;
+                    gap: 50px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="avatarCont">
+            <img src="maleAvatar.svg">
+            <div class="namePlate">
+                
+                <h2>
+                    JOHN DOE
+                </h2>
+                <span>
+                    Frontend Developer
+                </span>
+                
+            </div>
+        </div>
+
+        <div class="skillSet">
+            <div class="card">
+                <span>
+                    12
+                </span>
+                <span>
+                    Post
+                </span>
+            </div>
+
+            <div class="card">
+                <span>
+                    48
+                </span>
+                <span>
+                    Project
+                </span>
+            </div>
+
+            <div class="card">
+                <span>
+                    07
+                </span>
+                <span>
+                    Experience
+                </span>
+            </div>
+        </div>
+
+        <div class="profileLinkCont">
+            <a href="">[ View Profile ]</a>
+        </div>
+
+        
+    </body>
+</html>

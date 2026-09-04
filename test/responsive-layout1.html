@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>
+            Responsive web #1
+        </title>
+    </head>
+
+    <style>
+        .navControl{
+            display: none;
+        }
+        h3,h4,p{
+            margin: 0;
+        }
+        .navCont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px; 
+            padding-bottom: 10px;  
+            border-bottom: 1px solid black;
+        }
+        .heroCont{
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            gap: 20px;
+        }
+        .heroImgCont{
+            width: 350px;
+            height: 400px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgrey;
+        }
+        p{
+            width: 350px;
+            text-align: center;
+        }
+        .heroHead{
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .featureCont{
+            /*border: 2px dotted black;*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .card{
+            border: 2px dotted lightslategrey;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .cardCont{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 600px){
+            .navControl{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+            }
+            .symb{
+                display: none;
+            }
+            .heroHead{
+                flex-direction: row;
+                gap: 15px;
+                margin-top: 25px;
+            }
+            p{
+                width: auto;
+                max-width: 1000px;
+            }
+            button{
+                width: 300px;
+            }
+            .heroImgCont{
+                width: 600px;
+                height: 230px;
+            }
+            .cardCont{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="navCont">
+            <h3>
+                LOGO
+            </h3>
+            <div class="navControl">
+                <span>
+                    Home
+                </span>
+                <span>
+                    Features
+                </span>
+                <span>
+                    Pricing
+                </span>
+                <span>
+                    Login
+                </span>
+            </div>
+
+            <span class="symb">=</span>
+        </div>
+
+        <div class="heroCont">
+            <div class="heroHead">
+                
+                <h4>
+                    Build Better.
+                </h4>
+                <h4>
+                    Ship Faster.
+                </h4>
+                
+            </div>
+            <p>
+                Description is here, This is placeholder text
+                i am writing to see how it is going to look on 
+                it. currrently I am working on it and kinda understanding it as well
+                in a better manner.
+            </p>
+            <button>
+                [ Get Started ]
+            </button>
+
+            <div class="heroImgCont">
+                <img src="" alt="image">
+            </div>
+        </div>
+
+        <div class="featureCont">
+            <h3>
+                Feature
+            </h3>
+            <div class="cardCont">
+                
+                <div class="card">
+                    <span>
+                        Fast
+                    </span>
+                </div>
+
+                <div class="card">
+                    <span>
+                        Secure
+                    </span>
+                </div>
+
+                <div class="card">
+                    <span>
+                        Simple
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
