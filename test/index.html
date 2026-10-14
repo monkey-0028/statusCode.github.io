@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Static FUll desktop #2</title>
+        <meta name="description" content="This is static website made for deskop layout only">
+        <meta name="robots" content="noindex, nofollow">
+
+        <style>
+        :root{
+            --logoH1-fontSize: 1.6em;
+            --contLink-fontSize: 0.8em;
+            --linkGap : 25px;
+            --leftRight-margin : 50px;
+            --navControl-gap : 30px;
+            --navIconHeight : 25px;
+            --navIconWidth : 25px;
+            --navHeight : 60px;
+            --logoLetterSpacing: 5px;
+            --topMargin : 20px
+        }
+            img{
+                width: var(--navIconWidth);
+                height: var(var(--navIconHeight));
+            }
+            h1,h2,h3,h4,body{
+                margin: 0;
+            }
+            body{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0px var(--leftRight-margin);
+                height: var(--navHeight);
+            }
+            nav>h1{
+                letter-spacing: var(--logoLetterSpacing);
+                font-weight: 600;
+                font-size: var(--logoH1-fontSize);
+            }
+            .navLinksCont{
+                display: flex;
+                flex-direction: row;
+                gap: var(--linkGap);
+            }
+            .navLinksCont>a{
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                font-size: var(--contLink-fontSize);
+            }
+            .navControls{
+                display: flex;
+                flex-direction: row;
+                gap: var(--navControl-gap);
+                align-items: center;
+            }
+            .searchBOX{
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                border-radius: 15px;
+                padding: 0px 5px;
+                width: 200px;
+                height: 30px;
+                align-items: center;
+                background-color: lightgray;
+            }
+            .searchBOX>input{
+                border: none;
+                width: 150px;
+                background-color: lightgray;
+                color: darkgrey;
+            }
+            .searchBOX>input:focus{
+                outline: none;
+                box-shadow: none;
+                color: black;
+            }
+            .searchBOX>img{
+                width: 20px;
+                height: 20px;
+            }
+            .heroSection{
+                height: 500px;
+                background-image: url('../res/desktop2_heroImg.png'), linear-gradient(red,blue);
+                background-size: cover;
+                background-position-x: -80px;
+                background-repeat: no-repeat;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .heroSection>div{
+                display: flex;
+                flex-direction: column;
+                padding: 0 var(--leftRight-margin);
+                gap: 20px;
+                
+                
+            }
+            .heroSection>div>h3,h2{
+                text-transform: uppercase;
+                font-size: 3em;
+            }
+            
+            .heroSection>div>h3{
+                order: -1;
+                font-size: 0.8em;
+            }
+            .heroSection>div>a{
+                text-decoration: none;
+                text-transform: capitalize;
+                width: 160px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+                color: snow;
+            }
+            .quoteCont>span:first-child{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                text-transform: capitalize;
+                font-size: 1.2em;
+                color: gray
+            }
+            .quoteCont>span:last-child{
+                text-transform: uppercase;
+                letter-spacing: var(--logoLetterSpacing);
+                font-size: 0.7em;
+                font-weight: 700;
+                margin-top: 100px;
+            }
+            .horizontalBar{
+                height: 2px ;
+                width: 50px;
+                background-color: gray; 
+            }
+            
+            .sectionCard{
+                width: 250px;
+                height: 120px;
+                text-transform: capitalize;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 20px;
+                gap: 10px;
+                font-size: 1.1em;
+                background-size: cover ;
+            }
+            .sectionCard>a{
+                color: black;
+                font-size: 0.7em;
+                
+            }
+            .sectionCard>h3{
+                font-weight: lighter;
+            }
+            .sectionCont{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                justify-content: center;
+                margin-top: var(--topMargin);
+            }
+            .c1{
+                background-image: url("../res/deskWeb2_men.png"),linear-gradient(red,blue);
+            }
+            .c2{
+                background-image: url('../res/deskWeb2_women.png'),linear-gradient(red,blue);
+            }
+            .c3{
+                background-image: url('../res/deskWeb2_assessories.png'),linear-gradient(red,blue);
+            }
+            .c4{
+                background-image: url('../res/deskWeb2_home.png'),linear-gradient(red,blue);
+            }
+
+            .featureProdCont>div:first-child{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                text-transform: capitalize;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .featureProdCont>div:first-child>h3{
+                font-weight: 100;
+                font-size: 1.3em;
+            }
+            .featureProdCont>div:first-child>a{
+                font-size: 0.8em;
+            }
+            .featureProdCont{
+                margin: var(--topMargin) var(--leftRight-margin);
+                
+            }
+
+            .fPImgBOX{
+                width: 200px;
+                height: 200px;
+                background-size: cover;
+                background-position: center;
+            }
+            .fPImgBOX>img{
+                height: 15px;
+                width: 15px;
+                margin-left: 90%;
+                margin-top: 2px;
+            }
+            .fCard>h4{
+                margin: 5px 0;
+                text-transform: capitalize;
+            }
+            .p1{
+                background-image: url('../res/deskWeb2_prod1.png'),linear-gradient(red,blue); 
+            }
+            .p2{
+                background-image: url('../res/deskWeb2_prod2.png'),linear-gradient(red,blue);
+            }
+            .p3{
+                background-image: url('../res/deskWeb2_prod3.png'),linear-gradient(red,blue);
+            }
+            .p4{
+                background-image: url('../res/deskWeb2_prod4.png'),linear-gradient(red,blue);
+            }
+            .p5{
+                background-image: url('../res/deskWeb2_prod5.png'),linear-gradient(red,blue);
+            }
+            .featureProdCards{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <nav>
+            <h1>
+                NIMBUS
+            </h1>
+
+            <div class="navLinksCont">
+                
+                <a href="#">Men</a>
+                <a href="#">woman</a>
+                <a href="#">accessories</a>
+                <a href="#">journal</a>
+                <a href="#">About</a>
+                
+            </div>
+
+            <div class="navControls">
+                
+                <form method="get" >
+                    <label class="searchBOX">
+                        <img src="../res/search.svg" alt="search logo">
+                        <input type="text" placeholder="Search for products..">
+                    </label>
+                </form>
+
+                <a href="#">
+                    <img src="../res/avatar-black.svg" alt="Avatar logo for profile">
+                </a>
+
+                <a href="#">
+                    <img src="../res/bag.svg" alt="shopping cart logo">
+                </a>
+            </div>
+            
+        </nav>
+
+        <div class="heroSection">
+            <div>
+                
+                <h2>
+                    everyday <br> better
+                </h2>
+                <h3>
+                    new season
+                </h3>
+                <span>
+                    Timeless essential for a more intentional life.
+                </span>
+        
+                <a href="#"> <span>shop now →</span> </a>
+    
+            </div>
+
+            <div class="quoteCont">
+                <span>
+                    <span>
+                        good
+                    </span>
+                    <span>
+                        clothes
+                    </span>
+                    <span>
+                        brighter
+                    </span>
+                    <span>
+                        days
+                    </span>
+                    <div class="horizontalBar">
+                        
+                    </div>
+                </span>
+                <span>
+                    nimbus
+                </span>
+            </div>
+        </div>
+
+        <div class="sectionCont">
+            <div class="sectionCard c1">
+                <h3>
+                    men
+                </h3>
+                <a href="#">Shop →</a>
+            </div>
+            
+            <div class="sectionCard c2">
+                <h3>
+                    Women
+                </h3>
+                <a href="#">Shop →</a>
+            </div>
+            
+            <div class="sectionCard c3">
+                <h3>
+                    accessories
+                </h3>
+                <a href="#">Shop →</a>
+            </div>
+            
+            <div class="sectionCard c4">
+                <h3>
+                    home
+                </h3>
+                <a href="#">Shop →</a>
+            </div>
+            
+        </div>
+
+        <div class="featureProdCont">
+            <div>
+                <h3>
+                    feature products
+                </h3>
+                <a href="#">view all →</a>
+            </div>
+
+            <div class="featureProdCards">
+                
+                <div class="fCard">
+                    <div class="fPImgBOX p1">
+                        <img src="../res/heart.svg" alt="wishlist icon">
+                    </div>
+
+                    <h4>
+                        linen overshirt
+                    </h4>
+
+                    <span>
+                         ₹ 2,999
+                    </span>
+                </div>
+
+                <div class="fCard">
+                    <div class="fPImgBOX p2">
+                        <img src="../res/heart.svg" alt="wishlist icon">
+                    </div>
+
+                    <h4>
+                        Classic Sneakers
+                    </h4>
+
+                    <span>
+                         ₹ 4,499
+                    </span>
+                </div>
+
+                <div class="fCard">
+                    <div class="fPImgBOX p3">
+                        <img src="../res/heart.svg" alt="wishlist icon">
+                    </div>
+
+                    <h4>
+                        everyday backpack
+                    </h4>
+
+                    <span>
+                         ₹ 3,490
+                    </span>
+                </div>
+
+                <div class="fCard">
+                    <div class="fPImgBOX p4">
+                        <img src="../res/heart.svg" alt="wishlist icon">
+                    </div>
+
+                    <h4>
+                        wool blend sweater
+                    </h4>
+
+                    <span>
+                         ₹ 2,999
+                    </span>
+                </div>
+
+                <div class="fCard">
+                    <div class="fPImgBOX p5">
+                        <img src="../res/heart.svg" alt="wishlist icon">
+                    </div>
+
+                    <h4>
+                        minimal watch
+                    </h4>
+
+                    <span>
+                         ₹ 5,999
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

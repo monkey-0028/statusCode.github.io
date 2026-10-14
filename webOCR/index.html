@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            webOCR
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <style>
+            :root{
+                --logoSize : 100px;
+            }
+            h1,img{
+                margin: 0;
+            }
+            .logo{
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                align-items: center;
+
+                /*font*/
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                
+            }
+            .logo>img{
+                height: var(--logoSize);
+                width: var(--logoSize);
+            }
+            .logo>span{
+                color: #596579;
+                font-size: 1em;
+            }
+            .logo>h1{
+                color: #111827;
+                font-size: 2em;
+            }
+            .button_div{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 30px;
+            }
+            .button_div>button{
+                background-color: #246BFD;
+                border: 0;
+                width: 300px;
+                height: 80px;
+                border-radius: 20px;
+                color: white;
+                /*font*/
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-size: 1.5em;
+                font-weight: 500;
+                word-spacing: 0.7em;
+                box-shadow: 0 8px 20px rgba(36, 107, 253, 0.25);
+
+                cursor: pointer;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="logo">
+            <img src="./res/ocr_logo.svg" alt="logo svg" />
+            <h1>webOCR</h1>
+            <span> a web app</span>
+            
+        </div>
+
+        <div class="button_div">
+            <button>
+                ▶ Start
+            </button>
+        </div>
+    </body>
+</html>

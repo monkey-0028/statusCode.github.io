@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="blue" x1="90" y1="70" x2="420" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3478FF"/>
+      <stop offset="1" stop-color="#1761F5"/>
+    </linearGradient>
+    <filter id="shadow" x="108" y="100" width="296" height="330" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <path d="M174 72H132C113.2 72 98 87.2 98 106V148" stroke="url(#blue)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 72H380C398.8 72 414 87.2 414 106V148" stroke="url(#blue)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M98 364V406C98 424.8 113.2 440 132 440H174" stroke="url(#blue)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M414 364V406C414 424.8 398.8 440 380 440H338" stroke="url(#blue)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="151" y="122" width="210" height="270" rx="25" fill="#3478FF" opacity="0.13" filter="url(#shadow)"/>
+  <path d="M183 126H300L350 176V360C350 373.3 339.3 384 326 384H183C169.7 384 159 373.3 159 360V150C159 136.7 169.7 126 183 126Z" fill="white" stroke="#E3EBFC" stroke-width="3"/>
+  <path d="M300 126V158C300 167.9 308.1 176 318 176H350L300 126Z" fill="#D7E4FF"/>
+  <path d="M199 221H278" stroke="#C2CDE2" stroke-width="16" stroke-linecap="round"/>
+  <path d="M199 258H311" stroke="#C2CDE2" stroke-width="16" stroke-linecap="round"/>
+  <path d="M199 295H291" stroke="#C2CDE2" stroke-width="16" stroke-linecap="round"/>
+</svg>
