@@ -11,8 +11,9 @@
         <style>
             :root{
                 --logoSize : 100px;
+                --statusBoxPadding : 25px;
             }
-            h1,img{
+            h1,img,h3{
                 margin: 0;
             }
             .logo{
@@ -61,6 +62,85 @@
 
                 cursor: pointer;
             }
+
+            .currentStatus{
+                border: 1px solid #CDD3E0;
+                margin-top: 20px;
+                width: 600px;
+                height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 10px;
+            }
+            .statusNav{
+                background-color: #EEF1FF;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                height: 50px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px var(--statusBoxPadding);
+                font-family: "inter", sans-serif;
+                font-size: 1.0em;
+            }
+            .bubble{
+                height: 10px;
+                width: 10px;
+                border-radius:50% ;
+            }
+            .green{
+                background-color: #43D477;
+            }
+            .infoCard{
+                font-family: "JetBrains Mono", monospace;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+            .f_yellow{
+                color: #F4B400;
+            }
+            .status_info{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding: 0px var(--statusBoxPadding);
+            }
+            .title{
+                color: #667085;
+                width: 200px;
+            }
+            .footCard>img{
+                height: 40px;
+                width: 40px;
+            }
+            .footer{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 50px;
+                margin-top: 50px;
+
+            }
+            .footCard{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                border: 1px solid #CDD3E0;
+                width: 200px;
+                height: 50px;
+                border-radius: 10px;
+            }
+            .footCard>h3{
+                font-family: "inter", sans-serif;
+                font-weight: 500;
+            }
             
         </style>
     </head>
@@ -77,6 +157,38 @@
             <button>
                 ▶ Start
             </button>
+        </div>
+
+        <div class="currentStatus">
+            <div class="statusNav"> 
+                <h3>
+                    Current Status
+                </h3>
+                <div class="green bubble"></div>
+            </div>
+
+            <div class="status_info">
+                <div class="infoCard">
+                    <span class="title"> [backend connection]</span>
+                    <span class="value f_yellow">NA</span>
+                </div>
+                <div class="infoCard">
+                    <span class="title"> [current status]</span>
+                    <span class="value"> Currently working on button and it's animation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footCard">
+                <img src="./res/about.svg" alt="about svg"/>
+                <h3> ABOUT </h3>
+            </div>
+
+            <div class="footCard">
+                <img src="./res/github.svg" alt="github svg"/>
+                <h3> GITHUB </h3>
+            </div>
         </div>
     </body>
 </html>
