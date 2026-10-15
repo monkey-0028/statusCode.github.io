@@ -103,6 +103,9 @@
             .f_yellow{
                 color: #F4B400;
             }
+            .f_red{
+                color: #E53935;
+            }
             .status_info{
                 margin-top: 20px;
                 display: flex;
@@ -123,7 +126,7 @@
                 flex-direction: row;
                 justify-content: center;
                 gap: 50px;
-                margin-top: 50px;
+                margin: 50px 0px;
 
             }
             .footCard{
@@ -140,6 +143,10 @@
             .footCard>h3{
                 font-family: "inter", sans-serif;
                 font-weight: 500;
+            }
+            .footer>a{
+                color: black;
+                text-decoration: none;
             }
             
         </style>
@@ -174,21 +181,25 @@
                 </div>
                 <div class="infoCard">
                     <span class="title"> [current status]</span>
-                    <span class="value"> Currently working on button and it's animation</span>
+                    <span class="value"> Working on fixing status alignment </span>
+                </div>
+                <div class="infoCard">
+                    <span class="title"> [ISSUES]</span>
+                    <span class="value f_red"> 1. Status alignment <br> 2. html doc alignment (centering) </span>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <div class="footCard">
+            <a class="footCard" href="./about.html">
                 <img src="./res/about.svg" alt="about svg"/>
                 <h3> ABOUT </h3>
-            </div>
+            <a/>
 
-            <div class="footCard">
+            <a class="footCard" href="https://github.com/monkey-0028/webOCR">
                 <img src="./res/github.svg" alt="github svg"/>
                 <h3> GITHUB </h3>
-            </div>
+            <a/>
         </div>
     </body>
 </html>
